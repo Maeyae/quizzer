@@ -11,6 +11,17 @@ class Myapp extends StatefulWidget {
   _MyappState createState() => _MyappState();
 }
 class _MyappState extends State<Myapp> {
+  List<Icon> listescore =[
+    Icon(
+      Icons.check,
+      color: Colors.green,
+    ),
+
+    Icon(
+      Icons.close,
+      color: Colors.red,
+    ),
+  ];
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -65,18 +76,8 @@ class _MyappState extends State<Myapp> {
              ),
              ),
               Row(
-             children: [
-               Icon(
-              Icons.close,
-                   color:Colors.red,
-                   size: 25.0
-               ),
+             children: listescore
 
-                Icon(
-                    Icons.check,
-                    color:Colors.green,size: 25.0
-                ),
-         ],
          ),
 
            ],
