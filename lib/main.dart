@@ -21,7 +21,7 @@ class _MyappState extends State<Myapp> {
            crossAxisAlignment: CrossAxisAlignment.stretch,
            children: [
              Expanded(flex: 5, child: Padding(
-               padding: EdgeInsets.only(top:110, left:20, right:20),
+               padding: EdgeInsets.all(10),
                child: Center(
                  child: Text(
                   "question 1",
@@ -36,7 +36,7 @@ class _MyappState extends State<Myapp> {
     ElevatedButton(
     child: Text(
     "vrai",
-      style: TextStyle(color: Colors.white, fontSize: 16),
+      style: TextStyle(color: Colors.white, fontSize: 20),
     ),
       style: ElevatedButton.styleFrom(
        primary: Colors.green,
@@ -53,7 +53,7 @@ class _MyappState extends State<Myapp> {
                    ElevatedButton(
                      child: Text(
                        "faux",
-                       style: TextStyle(color: Colors.white, fontSize: 16),
+                       style: TextStyle(color: Colors.white, fontSize: 20),
                      ),
                      style: ElevatedButton.styleFrom(
                        primary: Colors.red,
@@ -64,13 +64,29 @@ class _MyappState extends State<Myapp> {
                ),
              ),
              ),
-    ],
+              Row(
+             children: [
+               Icon(
+              Icons.close,
+                   color:Colors.red,
+                   size: 25.0
+               ),
+
+                Icon(
+                    Icons.check,
+                    color:Colors.green,size: 25.0
+                ),
+         ],
+         ),
+
+           ],
+           ),
     ),
 
 
 
-    ),
     ),
     );
+
   }
 }
