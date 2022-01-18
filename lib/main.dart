@@ -11,6 +11,7 @@ class Myapp extends StatefulWidget {
   _MyappState createState() => _MyappState();
 }
 class _MyappState extends State<Myapp> {
+
   List<Icon> listescore =[
     Icon(
       Icons.check,
@@ -43,7 +44,7 @@ class _MyappState extends State<Myapp> {
         ),
              Expanded(child: Padding(
              padding: const EdgeInsets.all(10.0),
-    child: (
+    child:
     ElevatedButton(
     child: Text(
     "vrai",
@@ -53,11 +54,15 @@ class _MyappState extends State<Myapp> {
        primary: Colors.green,
        onPrimary: Colors.white,
       ),
-      onPressed: () {},
-    )
+      onPressed: () {setState(() {
+        listescore.add( Icon(Icons.check, color: Colors.green));}
+      );
+      }
+
     ),
     ),
-             ),
+    ),
+
              Expanded(child: Padding(
                padding: const EdgeInsets.all(10.0),
                child: (
@@ -70,7 +75,11 @@ class _MyappState extends State<Myapp> {
                        primary: Colors.red,
                        onPrimary: Colors.white,
                      ),
-                     onPressed: () {},
+                     onPressed: () {setState(() {
+    listescore.add( Icon(Icons.close, color: Colors.red));}
+                     );
+
+  }
                    )
                ),
              ),
