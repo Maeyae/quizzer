@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'quizBrain.dart';
+
+
+QuizBrain qb = QuizBrain();
 
 void main() {
   runApp(const Myapp());
@@ -23,11 +27,12 @@ class _MyappState extends State<Myapp> {
       color: Colors.red,
     ),
   ];
-  List<String> questions = [
-    "Le piton des neiges est un volcan de la Réunion ?",
-    "Flutter permet de faire des applications web également ?",
-    "Php est le language utilisé par Flutter ?" ];
-  List<bool> reponses = [true, false, true];
+ // List<String> questions = [
+   // "Le piton des neiges est un volcan de la Réunion ?",
+    //"Flutter permet de faire des applications web également ?",
+   // "Php est le language utilisé par Flutter ?" ];
+  //List<bool> reponses = [true, false, true];
+
 int questionNumber = 0;
   @override
   Widget build(BuildContext context) {
@@ -42,7 +47,7 @@ int questionNumber = 0;
                padding: EdgeInsets.all(10),
                child: Center(
                  child: Text(
-                  questions[questionNumber],
+                 qb.questions[questionNumber].enonce,
              style: TextStyle(color: Colors.white, fontSize: 25),
              ),
                ),
@@ -61,7 +66,7 @@ int questionNumber = 0;
        onPrimary: Colors.white,
       ),
       onPressed: () {
-      bool bonnereponse = reponses[questionNumber];
+      bool bonnereponse = qb.questions[questionNumber].reponse;
       setState(() {
         if(bonnereponse == true){
           listescore.add( Icon(Icons.check, color: Colors.green));
@@ -91,7 +96,7 @@ int questionNumber = 0;
                        onPrimary: Colors.white,
                      ),
                      onPressed: () {
-                     bool bonnereponse = reponses[questionNumber];
+                     bool bonnereponse = qb.questions[questionNumber].reponse;
     setState(() {
     if(bonnereponse == false){
     listescore.add( Icon(Icons.check, color: Colors.green));
