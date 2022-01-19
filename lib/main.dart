@@ -24,7 +24,7 @@ class _MyappState extends State<Myapp> {
     ),
   ];
   List<String> questions = ["Question 1 ?", "Question 2 ?","Question 3 ?" ];
-
+int questionNumber = 0;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -38,7 +38,7 @@ class _MyappState extends State<Myapp> {
                padding: EdgeInsets.all(10),
                child: Center(
                  child: Text(
-                  questions[0],
+                  questions[questionNumber],
              style: TextStyle(color: Colors.white, fontSize: 25),
              ),
                ),
@@ -57,8 +57,9 @@ class _MyappState extends State<Myapp> {
        onPrimary: Colors.white,
       ),
       onPressed: () {setState(() {
-        listescore.add( Icon(Icons.check, color: Colors.green));}
-      );
+        listescore.add( Icon(Icons.check, color: Colors.green));
+          questionNumber++; // questionNumber = questionNumber + 1 ;
+      });
       }
 
     ),
