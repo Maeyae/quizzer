@@ -23,6 +23,8 @@ class _MyappState extends State<Myapp> {
       color: Colors.red,
     ),
   ];
+  List<String> questions = ["Question 1 ?", "Question 2 ?","Question 3 ?" ];
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -36,7 +38,7 @@ class _MyappState extends State<Myapp> {
                padding: EdgeInsets.all(10),
                child: Center(
                  child: Text(
-                  "question 1",
+                  questions[0],
              style: TextStyle(color: Colors.white, fontSize: 25),
              ),
                ),
