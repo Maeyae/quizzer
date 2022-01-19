@@ -79,8 +79,9 @@ int questionNumber = 0;
                        onPrimary: Colors.white,
                      ),
                      onPressed: () {setState(() {
-    listescore.add( Icon(Icons.close, color: Colors.red));}
-                     );
+    listescore.add( Icon(Icons.close, color: Colors.red));
+    questionNumber++; // questionNumber = questionNumber + 1 ;
+                     });
 
   }
                    )
