@@ -23,7 +23,11 @@ class _MyappState extends State<Myapp> {
       color: Colors.red,
     ),
   ];
-  List<String> questions = ["Question 1 ?", "Question 2 ?","Question 3 ?" ];
+  List<String> questions = [
+    "Le piton des neiges est un volcan de la Réunion ?",
+    "Flutter permet de faire des applications web également ?",
+    "Php est le language utilisé par Flutter ?" ];
+  List<bool> reponses = [true, false, true];
 int questionNumber = 0;
   @override
   Widget build(BuildContext context) {
@@ -56,8 +60,16 @@ int questionNumber = 0;
        primary: Colors.green,
        onPrimary: Colors.white,
       ),
-      onPressed: () {setState(() {
-        listescore.add( Icon(Icons.check, color: Colors.green));
+      onPressed: () {
+      bool bonnereponse = reponses[questionNumber];
+      setState(() {
+        if(bonnereponse == true){
+          listescore.add( Icon(Icons.check, color: Colors.green));
+
+        }
+        else{
+          listescore.add( Icon(Icons.close, color: Colors.red));
+        }
           questionNumber++; // questionNumber = questionNumber + 1 ;
       });
       }
@@ -78,12 +90,21 @@ int questionNumber = 0;
                        primary: Colors.red,
                        onPrimary: Colors.white,
                      ),
-                     onPressed: () {setState(() {
-    listescore.add( Icon(Icons.close, color: Colors.red));
-    questionNumber++; // questionNumber = questionNumber + 1 ;
-                     });
+                     onPressed: () {
+                     bool bonnereponse = reponses[questionNumber];
+    setState(() {
+    if(bonnereponse == false){
+    listescore.add( Icon(Icons.check, color: Colors.green));
 
-  }
+    }
+    else{
+    listescore.add( Icon(Icons.close, color: Colors.red));
+    }
+    questionNumber++; // questionNumber = questionNumber + 1 ;
+    });
+
+
+  },
                    )
                ),
              ),
